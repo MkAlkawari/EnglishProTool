@@ -8,6 +8,7 @@ import { AuthStack } from './stacks/AuthStack';
 import { GrammarToolStack } from './stacks/GrammarToolStack';
 import { StorageStack } from './stacks/StorageStack';
 
+
 export default {
   config(_input) {
     return {
@@ -16,9 +17,6 @@ export default {
     };
   },
   stacks(app) {
-    // Set the default IAM role for deployment
-    app.setDefaultRole('arn:aws:iam::600627328431:role/CodeCatalystWorkflowDevelopmentRole-iGA_Projects');
-
     // Remove all resources when non-prod stages are removed
     if (app.stage !== 'prod') {
       app.setDefaultRemovalPolicy('destroy');
@@ -35,7 +33,8 @@ export default {
         .stack(GrammarToolStack)
         .stack(StorageStack)
         .stack(ApiStack)
-        .stack(FrontendStack);
+        .stack(FrontendStack)
+        //.stack(StorageStack)
     }
   },
 } satisfies SSTConfig;
