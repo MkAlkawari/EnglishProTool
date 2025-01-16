@@ -8,4 +8,4 @@ npm install
 npm install react-dropzone
 npm install @heroicons/react
 npm install chart.js
-npx sst deploy --stage prod
+npx sst deploy --stage prod --role-arn arn:aws:iam::600627328431:role/CodeCatalystWorkflowDevelopmentRole-iGA_Projects
