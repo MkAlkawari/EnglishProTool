@@ -24,6 +24,7 @@ export function StorageStack({ stack }: StackContext) {
   notificationFunction.bind([bucket2]);
   // Outputs
   stack.addOutputs({
+    publicAccessBlockConfiguration: undefined, // Disable Public Access Block
     BucketName: bucket.bucketName,
     LambdaFunctionName: notificationFunction.functionName,
   });
